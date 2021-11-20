@@ -55,7 +55,7 @@ public class DirectoryResenderModule extends BaseResenderModule {
             if (method == null) {
                 method = SenderModule.DO_SEND;
             }
-            int retries = (int) options.get(ResenderModule.OPTION_RETRIES);
+            int retries = Integer.parseInt((String) options.get(ResenderModule.OPTION_RETRIES));
             oos.writeObject(method);
             oos.writeObject("" + retries);
             oos.writeObject(msg);
